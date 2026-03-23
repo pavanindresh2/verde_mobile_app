@@ -1,0 +1,48 @@
+import "dotenv/config";
+
+export default {
+  expo: {
+    name: "VIMS",
+    slug: "testing-app",
+    version: "1.0.0",
+    orientation: "portrait",
+
+    // ✅ MAIN ICON (from src)
+    icon: "./src/assets/waving.jpg",
+
+    userInterfaceStyle: "light",
+    newArchEnabled: true,
+
+    splash: {
+      image: "./src/assets/waving.jpg",
+      resizeMode: "cover",
+      backgroundColor: "#ffffff",
+    },
+
+    ios: {
+      supportsTablet: true,
+    },
+
+    // ✅ ANDROID APK ICON FIX
+    android: {
+      adaptiveIcon: {
+        foregroundImage: "./src/assets/waving.jpg",
+        backgroundColor: "#ffffff",
+      },
+      edgeToEdgeEnabled: true,
+      predictiveBackGestureEnabled: false,
+      package: "com.anonymous.testingapp",
+    },
+
+    web: {
+      favicon: "./src/assets/waving.jpg",
+    },
+
+    extra: {
+      API_BASE_URL: process.env.API_BASE_URL,
+      eas: {
+        projectId: "ef084aab-3bd2-49cf-bf59-46469b40751b",
+      },
+    },
+  },
+};
